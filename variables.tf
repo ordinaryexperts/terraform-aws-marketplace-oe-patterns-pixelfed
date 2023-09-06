@@ -99,12 +99,6 @@ variable "assets_bucket_name" {
   description = "Optional: Name of the S3 bucket to store uploaded assets. If not specified, a bucket will be created."
 }
 
-variable "assets_bucket_name" {
-  type        = string
-  default     = "1"
-  description = "Optional: Name of the S3 bucket to store uploaded assets. If not specified, a bucket will be created."
-}
-
 variable "ses_instance_user_access_key_serial" {
   type        = number
   default     = 1
