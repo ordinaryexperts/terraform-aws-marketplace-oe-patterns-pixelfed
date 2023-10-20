@@ -1,5 +1,7 @@
 # Unreleased
 
+# 1.1.0
+
 * upgrade to OE Pixelfed Pattern 1.1.0
 
 # 0.1.2
