@@ -180,3 +180,51 @@ variable "db_snapshot_identifier" {
   type        = string
   default     = ""
 }
+
+variable "activity_pub_enabled" {
+  description = "Optional: Whether to enable ActivityPub for this instance."
+  type        = bool
+  default     = true
+}
+
+variable "mastodon_login_enabled" {
+  description = "Optional: Whether to enable login with Mastodon for this instance."
+  type        = bool
+  default     = false
+}
+
+variable "mastodon_login_skip_email_verification" {
+  description = "Optional: To improve the onboarding experience, you can opt to skip the email verification process and automatically verify their email."
+  type        = bool
+  default     = true
+}
+
+variable "mastodon_login_custom_domains" {
+  description = "Optional: Comma separated list of custom domains to allow."
+  type        = string
+  default     = ""
+}
+
+variable "mastodon_login_only_default_domains" {
+  description = "Optional: Allow Sign-in with Mastodon using only the default domains."
+  type        = bool
+  default     = true
+}
+
+variable "mastodon_login_only_custom_domains" {
+  description = "Optional: Allow Sign-in with Mastodon using only the custom domains you define, in comma separated format."
+  type        = bool
+  default     = false
+}
+
+variable "mastodon_login_enforce_max_uses" {
+  description = "Optional: Using a centralized service operated by pixelfed.org that tracks mastodon imports, you can set a limit of how many times a mastodon account can be imported across all known and reporting Pixelfed instances to prevent the same masto account from abusing this."
+  type        = bool
+  default     = false
+}
+
+variable "mastodon_login_max_uses_limit" {
+  description = "Optional: Integer limit of how many times a Mastodon account can be imported accross all known and reporting Pixelfed instances."
+  type        = bool
+  default     = false
+}

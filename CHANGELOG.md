@@ -1,5 +1,7 @@
 # Unreleased
 
+* upgrade to OE Pixelfed Pattern 1.1.0
+
 # 0.1.2
 
 * use bool for variables
