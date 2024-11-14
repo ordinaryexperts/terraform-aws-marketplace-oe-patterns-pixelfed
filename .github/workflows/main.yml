@@ -3,12 +3,12 @@ name: "Test OE Pixelfed AWS Pattern Terraform Module"
 on:
  push:
    branches:
-   - main
-   - hotfix/2.0.0
+     - main
  pull_request:
    branches:
-   - main
-   - hotfix/2.0.0
+     - main
+ schedule:
+   - cron: "15 9 * * 1"
  
 env:
  # verbosity setting for Terraform logs
