@@ -3,6 +3,7 @@
 # 2.0.0
 
 * upgrade to OE Pixelfed Pattern 2.0.0 (Pixelfed v0.12.4)
+* add testing
 
 # 1.1.0
 
