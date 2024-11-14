@@ -11,9 +11,15 @@ terraform {
 resource "aws_cloudformation_stack" "oe_patterns_pixelfed" {
   name = var.stack_name
 
-  template_url = "https://s3.amazonaws.com/awsmp-fulfillment-cf-templates-prod/93b3eaa6-e079-44f0-ab14-0b7dd0d3809f/bea0dc78fc4242cb8ba4e8fc1fe51f96.template"
+  template_url = "https://s3.amazonaws.com/awsmp-fulfillment-cf-templates-prod/93b3eaa6-e079-44f0-ab14-0b7dd0d3809f/5e473f9f83ef4c1998972f0af3a547fa.template"
 
   capabilities = ["CAPABILITY_NAMED_IAM"]
+
+  # timeouts
+  timeout_in_minutes = 120
+  timeouts {
+    create = "120m"
+  }
 
   parameters = {
     ActivityPubEnabled                 = var.activity_pub_enabled
@@ -22,6 +28,7 @@ resource "aws_cloudformation_stack" "oe_patterns_pixelfed" {
     AsgDataVolumeSize                  = var.asg_data_volume_size
     AsgDataVolumeSnapshot              = var.asg_data_volume_snapshot
     AsgInstanceType                    = var.asg_instance_type
+    AsgKeyName                         = var.asg_key_name
     AsgReprovisionString               = var.asg_reprovision_string
     AssetsBucketName                   = var.assets_bucket_name
     DbBackupRetentionPeriod            = var.db_backup_retention_period
