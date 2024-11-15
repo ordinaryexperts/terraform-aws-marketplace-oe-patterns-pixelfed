@@ -16,6 +16,7 @@ run "provision_pixelfed" {
     alb_ingress_cidr = "0.0.0.0/0"
     dns_hostname = "${run.setup_tests.stack_prefix}-pixelfed-test.test.patterns.ordinaryexperts.com"
     dns_route53_hosted_zone_name = "test.patterns.ordinaryexperts.com"
+    ses_create_domain_identity = false
     stack_name = "${run.setup_tests.stack_prefix}-pixelfed-test"
   }
 
