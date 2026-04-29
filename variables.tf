@@ -159,6 +159,24 @@ variable "asg_data_volume_snapshot" {
   description = "Optional: An EBS snapshot id to restore as a starting point for the data volume."
 }
 
+variable "asg_data_volume_backup_retention_period" {
+  type        = number
+  default     = 7
+  description = "Required: The number of days to retain data volume backups."
+}
+
+variable "asg_data_volume_backup_vault_arn" {
+  type        = string
+  default     = ""
+  description = "Optional: ARN of an existing AWS Backup vault to use for data volume backups. If not specified, a vault will be created."
+}
+
+variable "asg_disk_usage_alarm_threshold" {
+  type        = number
+  default     = 80
+  description = "Required: The alarm threshold for disk usage percentage."
+}
+
 variable "alb_certificate_arn" {
   description = "Required: Specify the ARN of a ACM Certificate to configure HTTPS."
   type        = string
@@ -230,7 +248,7 @@ variable "mastodon_login_enforce_max_uses" {
 }
 
 variable "mastodon_login_max_uses_limit" {
-  description = "Optional: Integer limit of how many times a Mastodon account can be imported accross all known and reporting Pixelfed instances."
-  type        = bool
-  default     = false
+  description = "Optional: Integer limit of how many times a Mastodon account can be imported across all known and reporting Pixelfed instances."
+  type        = number
+  default     = 3
 }
