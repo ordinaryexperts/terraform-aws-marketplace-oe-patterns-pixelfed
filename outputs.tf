@@ -23,6 +23,11 @@ output "vpc_public_subnet2_id_output" {
   value       = aws_cloudformation_stack.oe_patterns_pixelfed.outputs["VpcPublicSubnet2IdOutput"]
 }
 
+output "asg_data_volume_backup_vault_arn_output" {
+  description = "ARN of the AWS Backup vault used for the application data volume."
+  value       = aws_cloudformation_stack.oe_patterns_pixelfed.outputs["AsgDataVolumeBackupVaultArnOutput"]
+}
+
 output "dns_site_url_output" {
   description = "The URL Endpoint."
   value       = aws_cloudformation_stack.oe_patterns_pixelfed.outputs["DnsSiteUrlOutput"]
